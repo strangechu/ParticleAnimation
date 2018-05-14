@@ -38,19 +38,19 @@ public:
     {
         if (GLGuiApplicationClass->objectName().isEmpty())
             GLGuiApplicationClass->setObjectName(QStringLiteral("GLGuiApplicationClass"));
-        GLGuiApplicationClass->resize(910, 503);
+        GLGuiApplicationClass->resize(700, 492);
         centralWidget = new QWidget(GLGuiApplicationClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         openGLWidget = new GLWidget(centralWidget);
         openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
-        openGLWidget->setGeometry(QRect(30, 20, 641, 421));
+        openGLWidget->setGeometry(QRect(20, 20, 400, 400));
         quitButton = new QPushButton(centralWidget);
         quitButton->setObjectName(QStringLiteral("quitButton"));
-        quitButton->setGeometry(QRect(750, 390, 75, 23));
+        quitButton->setGeometry(QRect(590, 390, 75, 23));
         GLGuiApplicationClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(GLGuiApplicationClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 910, 21));
+        menuBar->setGeometry(QRect(0, 0, 700, 21));
         GLGuiApplicationClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(GLGuiApplicationClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
