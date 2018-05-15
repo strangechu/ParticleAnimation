@@ -42,3 +42,25 @@ void ParticleManager::draw()
 		drawCircle(it->position.x, it->position.y, 0.1);
 	}
 }
+
+void ParticleManager::clear()
+{
+	particles.clear();
+}
+
+void ParticleManager::initTask1()
+{
+	Particle p(Vector2(0.1, 0.1), Vector2(), Vector2(), 0.1);
+	particles.push_back(p);
+	p.position = Vector2(-0.2, -0.2);
+	particles.push_back(p);
+	p.position = Vector2(0.5, -0.5);
+	particles.push_back(p);
+}
+
+void ParticleManager::step()
+{
+	for (std::vector<Particle>::iterator it = particles.begin(); it != particles.end(); it++) {
+		it->position.y -= 0.1;
+	}
+}

@@ -24,5 +24,10 @@ public:
 
 	void init();
 	void draw();
+	void clear();
+
+	void initTask1();
+
+	void step();
 };
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
+    <width>681</width>
     <height>492</height>
    </rect>
   </property>
@@ -37,14 +37,27 @@
      <string>Quit</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>70</y>
+      <width>112</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Simulation</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>700</width>
-     <height>21</height>
+     <width>681</width>
+     <height>29</height>
     </rect>
    </property>
   </widget>
@@ -64,6 +77,9 @@
    <class>GLWidget</class>
    <extends>QOpenGLWidget</extends>
    <header>glwidget.h</header>
+   <slots>
+    <slot>onStartBtnClicked()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
@@ -77,8 +93,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>263</y>
+     <x>590</x>
+     <y>435</y>
     </hint>
     <hint type="destinationlabel">
      <x>531</x>
@@ -86,5 +102,40 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>released()</signal>
+   <receiver>GLGuiApplicationClass</receiver>
+   <slot>onStartBtnClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>551</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>195</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>released()</signal>
+   <receiver>openGLWidget</receiver>
+   <slot>onStartBtnClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>onStartBtnClicked()</slot>
+ </slots>
 </ui>

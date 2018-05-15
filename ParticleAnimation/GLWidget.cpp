@@ -41,3 +41,17 @@ void GLWidget::resizeGL(int w, int h)
 	//gluPerspective(45.0, (float)w / h, 0.01, 100.0);
 	gluOrtho2D(-(float)w / h, (float)w / h, -1.0, 1.0);
 }
+
+void GLWidget::stepSimulation()
+{
+	ParticleManager* pm = ParticleManager::getInstance();
+	pm->step();
+	update();
+}
+
+void GLWidget::onStartBtnClicked()
+{
+	QTimer *timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(stepSimulation()));
+	timer->start(1000);
+}
