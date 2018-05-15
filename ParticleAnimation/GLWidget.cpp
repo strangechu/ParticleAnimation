@@ -30,11 +30,7 @@ void GLWidget::paintGL()
 	//glLoadIdentity();
 	//gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 
-	glColor3f(1, 0, 0);
-	//glutSolidSphere(0.1, 20, 20);
-	//glRectf(-0.5, -0.5, 0.5, 0.5);
 	pm->draw();
-	glEnd();
 }
 
 void GLWidget::resizeGL(int w, int h)
