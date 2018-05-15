@@ -28,18 +28,13 @@ ParticleManager::~ParticleManager()
 
 void ParticleManager::init()
 {
-	Particle p(Vector2(0.1, 0.1), Vector2(), Vector2(), 0.1);
-	particles.push_back(p);
-	p.position = Vector2(-0.2, -0.2);
-	particles.push_back(p);
-	p.position = Vector2(0.5, -0.5);
-	particles.push_back(p);
+	initTask1();
 }
 
 void ParticleManager::draw()
 {
 	for (std::vector<Particle>::iterator it = particles.begin(); it != particles.end(); it++) {
-		drawCircle(it->position.x, it->position.y, 0.1);
+		drawCircle(it->position.x, it->position.y, 0.05);
 	}
 }
 
@@ -50,17 +45,17 @@ void ParticleManager::clear()
 
 void ParticleManager::initTask1()
 {
-	Particle p(Vector2(0.1, 0.1), Vector2(), Vector2(), 0.1);
+	clear();
+
+	Particle p(Vector2(-0.8, -0.8), Vector2(0.02, 0.02), Vector2(), 0.1);
 	particles.push_back(p);
-	p.position = Vector2(-0.2, -0.2);
-	particles.push_back(p);
-	p.position = Vector2(0.5, -0.5);
-	particles.push_back(p);
+
 }
 
 void ParticleManager::step()
 {
 	for (std::vector<Particle>::iterator it = particles.begin(); it != particles.end(); it++) {
-		it->position.y -= 0.1;
+		it->position = it->position + it->velocity;
+		it->velocity = it->velocity + Vector2(0.0, -0.0005);
 	}
 }

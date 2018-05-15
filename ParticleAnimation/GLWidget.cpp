@@ -53,5 +53,5 @@ void GLWidget::onStartBtnClicked()
 {
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(stepSimulation()));
-	timer->start(1000);
+	timer->start(10);
 }
